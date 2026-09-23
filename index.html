@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gloria Tejuosho: SEO Content Writing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EF;
+    --ink:#161A17;
+    --muted:#68695F;
+    --line:#DEDACB;
+    --card:#FFFFFF;
+    --tag:#EEEBDE;
+    --jade:#1F8A5C;
+    --jade-dim:#E6F1EA;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:72px 28px 100px;}
+
+  /* ---------- Hero ---------- */
+  .name{
+    font-family:"Fraunces", Georgia, serif;
+    font-size:clamp(2.4rem, 5vw, 3.4rem);
+    font-weight:500;
+    letter-spacing:-0.015em;
+    margin:0 0 6px;
+  }
+  .role{
+    font-size:1rem;
+    color:var(--muted);
+    margin-bottom:36px;
+  }
+  .intro{max-width:62ch;}
+  .intro p{font-size:1.06rem;margin:0 0 16px;}
+  .intro strong{font-weight:600;}
+
+  /* stat ticker */
+  .ticker{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    margin:40px 0 8px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .ticker .stat{
+    flex:1 1 160px;
+    padding:18px 22px;
+    border-right:1px solid var(--line);
+  }
+  .ticker .stat:last-child{border-right:none;}
+  .ticker .stat .num{
+    font-family:"IBM Plex Mono", monospace;
+    font-weight:600;
+    font-size:1.5rem;
+    color:var(--jade);
+    display:block;
+  }
+  .ticker .stat .label{
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  @media (max-width:600px){
+    .ticker .stat{flex:1 1 50%;border-bottom:1px solid var(--line);}
+  }
+
+  .disclaimer{
+    font-size:0.85rem;
+    color:var(--muted);
+    margin:44px 0 60px;
+    padding-left:14px;
+    border-left:2px solid var(--line);
+  }
+
+  /* ---------- Sections ---------- */
+  section.category{margin-bottom:68px;}
+  section.category .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:26px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+  }
+  section.category h2{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:500;
+    font-size:1.4rem;
+    margin:0;
+  }
+  section.category .sec-count{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.78rem;
+    color:var(--muted);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:22px;
+  }
+  @media (max-width:640px){
+    .grid{grid-template-columns:1fr;}
+    .wrap{padding:48px 20px 80px;}
+  }
+
+  /* ---------- Cards ---------- */
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:3px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .18s ease, border-color .18s ease;
+  }
+  .card:hover{
+    transform:translateY(-3px);
+    border-color:#c9c4b0;
+  }
+
+  .chrome{
+    background:#F0EEE3;
+    border-bottom:1px solid var(--line);
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .chrome .dots{display:flex;gap:4px;flex-shrink:0;}
+  .chrome .dot{width:6px;height:6px;border-radius:50%;background:#D2CDBB;}
+  .chrome .url{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.68rem;
+    color:var(--muted);
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:3px 8px;
+    flex:1;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .shot{
+    width:100%;
+    aspect-ratio:16/10;
+    object-fit:cover;
+    display:block;
+    background:#EAE7DC;
+  }
+  .shot.placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.78rem;
+    color:var(--muted);
+    text-align:center;
+    padding:20px;
+  }
+
+  .card-body{padding:18px 20px 20px;}
+  .card-body h3{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:500;
+    font-size:1.12rem;
+    margin:0 0 10px;
+  }
+  .card-body h3 a{color:var(--ink);text-decoration:none;}
+  .card-body h3 a:hover{color:var(--jade);}
+
+  .tags{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;}
+  .tag{
+    font-size:0.72rem;
+    color:var(--muted);
+    background:var(--tag);
+    padding:3px 9px;
+    border-radius:2px;
+  }
+
+  .outcome{font-size:0.92rem;color:var(--ink);}
+  .rank{
+    font-family:"IBM Plex Mono", monospace;
+    font-weight:600;
+    color:var(--ink);
+    background:linear-gradient(to bottom, transparent 62%, var(--jade-dim) 62%);
+    padding:0 2px;
+  }
+
+  .card.dashed{border-style:dashed;background:transparent;}
+  .card.dashed .shot.placeholder{background:transparent;}
+  .card.dashed .card-body{color:var(--muted);}
+
+  footer{
+    margin-top:48px;
+    font-size:0.8rem;
+    color:var(--muted);
+  }
+
+  /* ---------- Contact / CTA ---------- */
+  .contact{
+    margin-top:80px;
+    padding-top:52px;
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  .contact h2{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:500;
+    font-size:clamp(1.7rem, 3.5vw, 2.3rem);
+    margin:0 0 12px;
+    letter-spacing:-0.01em;
+  }
+  .contact p{
+    color:var(--muted);
+    max-width:48ch;
+    margin:0 auto 30px;
+    font-size:1rem;
+  }
+  .contact-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .contact-links a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 20px;
+    border-radius:3px;
+    text-decoration:none;
+    font-size:0.92rem;
+    font-weight:500;
+    border:1px solid var(--line);
+    color:var(--ink);
+    background:var(--card);
+    transition:border-color .18s ease, transform .18s ease;
+  }
+  .contact-links a:hover{transform:translateY(-2px);border-color:#c9c4b0;}
+  .contact-links a.primary{
+    background:var(--ink);
+    color:var(--paper);
+    border-color:var(--ink);
+  }
+  .contact-links a.primary:hover{background:#242b25;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="name">Gloria Tejuosho</div>
+  <div class="role"><strong> Content Writer || Fintech Content Writer</strong></div>
+
+  <div class="intro">
+    <p>Anyone can write. Heck, AI can spit out 100k words in less than 10 minutes.</p>
+    <p>However, only a few people know how to write words that make people care and take action. I am one of them.</p>
+    <p>I spent the last <strong>26 months and 18 days</strong> (yes, I update this regularly) creating SEO-savvy content that shows people why a product is worth their attention, their trust, and ultimately, their money.</p>
+    <P>Along the way, my work has helped brands increase online visibility and create content that supports their business goals without relying entirely on paid advertising.</P>
+  </div>
+
+  <div class="ticker">
+    <div class="stat"><span class="num">26mo 18d</span><span class="label">writing SEO content</span></div>
+    <div class="stat"><span class="num">8+</span><span class="label">brands worked with</span></div>
+    <div class="stat"><span class="num">100+</span><span class="label">pieces of content written</span></div>
+    <div class="stat"><span class="num">25+</span><span class="label">#1 keyword rankings</span></div>
+  </div>
+
+  <div class="disclaimer">
+    Disclaimer: These samples were written based on the brand's editorial guidelines.
+  </div>
+
+  <!-- ================= BLOG POSTS ================= -->
+  <section class="category">
+    <div class="sec-head"><h2>Blog Posts</h2><span class="sec-count">04</span></div>
+    <div class="grid">
+
+      <div class="card dashed"><a href="https://medium.com/@gloriadasilva_28376/how-to-scale-video-testimonial-production-with-vocal-video-69910ab212cf?sharedUserId=gloriadasilva_28376">
+            <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">https://medium.com/@gloriadasilva_28376/how-to-scale-video-testimonial-production-with-vocal-video-69910ab212cf?postPublishedType=initial</div>
+        </div>
+        <img class="shot" src="vocal-video-production.png" alt="Google search results for eSIM vs virtual number">
+        <div class="card-body"><a href="https://medium.com/@gloriadasilva_28376/how-to-scale-video-testimonial-production-with-vocal-video-69910ab212cf?sharedUserId=gloriadasilva_28376">
+          <h3><a href="https://medium.com/@gloriadasilva_28376/how-to-scale-video-testimonial-production-with-vocal-video-69910ab212cf?sharedUserId=gloriadasilva_28376"> SaaS Product-Led Content Sample</a></h3>
+          <div class="tags"><span class="tag">Written to showcase B2B writing skills</span></div>
+          <div class="outcome">A product-led SEO guide showing how Vocal Video helps businesses streamline and scale customer video testimonial production. </div>
+        </a>
+        </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">https://cardtonic.com/read/esim-vs-virtual-number-which-one-do-you-need</div>
+        </div>
+        <img class="shot" src="proof-1.png" alt="Google search results for eSIM vs virtual number">
+        <div class="card-body"><a href="https://cardtonic.com/read/esim-vs-virtual-number-which-one-do-you-need">
+          <h3><a href="https://cardtonic.com/read/esim-vs-virtual-number-which-one-do-you-need" target="_blank">eSIM Vs. Virtual Number</a></h3>
+          <div class="tags"><span class="tag">Published</span><span class="tag">Authored</span></div>
+          <div class="outcome">Ranks <span class="rank">#1</span> for its primary keyword, "eSIM vs. virtual number," in Nigeria search results.</div>
+        </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">google.com/search?q=$200+sephora+gift+card+in+naira</div>
+        </div>
+        <img class="shot" src="sephora.png" alt="Google search results for $200 sephora gift card in naira">
+        <div class="card-body">
+          <h3><a href="https://cardtonic.com/read/200-dollar-sephora-card-in-naira" target="_blank">Sephora Gift Cards</a></h3>
+          <div class="tags"><span class="tag">Published</span><span class="tag">Authored</span></div>
+          <div class="outcome">Ranks <span class="rank">#1</span> for its primary keyword, "$200 sephora gift card in naira."</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">google.com/search?q=how+to+buy+apps+on+app+store&oq=how+to+buy+apps</div>
+        </div>
+        <img class="shot" src="buyapps.png" alt="Google search results for how to buy apps on the App Store and Play Store">
+        <div class="card-body">
+          <h3><a href="https://cardtonic.com/read/how-to-buy-apps-on-apple-app-store-and-google-play-store-in-nigeria" target="_blank">How to Buy Apps on Apple App Store and Google Play Store</a></h3>
+          <div class="tags"><span class="tag">Published</span><span class="tag">Authored</span></div>
+          <div class="outcome">Ranks <span class="rank">#1</span> for its primary keyword, "how to buy apps on app store."</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= GUEST POST LISTICLES ================= -->
+  <section class="category">
+    <div class="sec-head"><h2>[Guest Post] Listicles</h2><span class="sec-count">04</span></div>
+    <div class="grid">
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">google.com/search?q=siege+media+alternative</div>
+        </div>
+        <img class="shot" src="seige-media.png" alt="Google search results for siege media alternative">
+        <div class="card-body">
+          <h3><a href="#" target="_blank">Siege Media Alternatives</a></h3>
+          <div class="tags"><span class="tag">Published</span><span class="tag">Authored</span></div>
+          <div class="outcome">Ranks <span class="rank">#1</span> for its primary keyword, "siege media alternative."</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">google.com/search?q=top+bill+payment+platforms</div>
+        </div>
+        <img class="shot" src="bill.png" alt="Google search results for top bill payment platforms">
+        <div class="card-body">
+          <h3><a href="https://www.myjoyonline.com/top-10-online-bill-payment-platforms-in-nigeria/" target="_blank">Top 10 Bill Payment Platforms</a></h3>
+          <div class="tags"><span class="tag">Guest Post</span><span class="tag">Ghostwritten</span></div>
+          <div class="outcome">Ranks on Google page 2 for its primary keyword, "top bill payment platforms."</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">google.com/search?q=where+to+buy+laptop+in+nigeria</div>
+        </div>
+        <img class="shot" src="buy-laptop.png" alt="Google search results for where to buy laptop in Nigeria">
+        <div class="card-body">
+          <h3><a href="https://techbuild.africa/9-best-places-to-buy-laptops-in-nigeria/" target="_blank">Top Platforms to Buy Laptops</a></h3>
+          <div class="tags"><span class="tag">Guest Post</span><span class="tag">Ghostwritten</span></div>
+          <div class="outcome">Ranks <span class="rank">#3</span> for "where to buy laptop in Nigeria."</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">google.com/search?q=best+sites+to+buy+gift+cards+online</div>
+        </div>
+        <img class="shot" src="giftcards.png" alt="Google search results for siege media alternative">
+        <div class="card-body">
+          <h3><a href="https://www.techcityng.com/6-best-sites-to-buy-gift-cards-online-instantly-in-nigeria-2026/" target="_blank">6 Best Sites to Buy Gift Cards Online Instantly in Nigeria (2026)</a></h3>
+          <div class="tags"><span class="tag">Guest Post</span><span class="tag">Ghostwritten</span></div>
+          <div class="outcome">Ranks <span class="rank">on Google Page 1</span> for its primary keyword, "best sites to buy gift cards online."</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TECHNICAL ARTICLES ================= -->
+  <section class="category">
+    <div class="sec-head"><h2>Technical Articles</h2><span class="sec-count">03</span></div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">spotflow docs / redirect-api-guide</div>
+        </div>
+        <img class="shot" src="image.png" alt="Spotflow Redirect API integration guide article">
+        <div class="card-body">
+          <h3><a href="https://docs.spotflow.one/developer-resources/redirectapi-in-your-app" target="_blank">Step-by-Step Integration Guide</a></h3>
+          <div class="tags"><span class="tag">Authored</span></div>
+          <div class="outcome">Walks developers through the Spotflow Redirect API from payment initialisation to verification.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">freecodecamp.org/news/...</div>
+        </div>
+        <img class="shot" src="freecodecamp.png" alt="FreeCodeCamp article on building API documentation">
+        <div class="card-body">
+          <h3><a href="https://www.freecodecamp.org/news/how-to-build-api-documentation-from-scratch-roadmap/" target="_blank">API Documentation Guide on FreeCodeCamp</a></h3>
+          <div class="tags"><span class="tag">Authored</span></div>
+          <div class="outcome">A roadmap for building API documentation from scratch, covering planning, structure, tooling, and publishing.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">dev.to/gloriasilver/building-an-authentication-system-with-express-jwt-a-step-by-step-guide-7g2</div>
+        </div>
+        <img class="shot" src="building.png" alt="A guide on how to build an authentication system">
+        <div class="card-body">
+          <h3><a href="https://dev.to/gloriasilver/building-an-authentication-system-with-express-jwt-a-step-by-step-guide-7g2" target="_blank">Building an Authentication System With Express JWT: A Step-by-Step Guide</a></h3>
+          <div class="tags"><span class="tag">Authored</span></div>
+          <div class="outcome">A guide for building building an authentication system using Express, MongoDB, and JWT, </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ================= PRESS RELEASES ================= -->
+  <section class="category">
+    <div class="sec-head"><h2>Press Releases</h2><span class="sec-count">02</span></div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">nairametrics.com/...</div>
+        </div>
+        <img class="shot" src="giftcardp.png" alt="Nairametrics article on Cardtonic full-service gift card launch">
+        <div class="card-body">
+          <h3><a href="https://www.premiumtimesng.com/promoted/888183-cardtonic-evolves-into-full-service-gift-card-app-for-nigerians-to-buy-local-gift-cards.html" target="_blank">Full-Service Gift Card Launch</a></h3>
+          <div class="tags"><span class="tag">Ghostwritten</span></div>
+          <div class="outcome">Cardtonic's full-service gift card launch, covered on Nairametrics.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">techcabal.com/...</div>
+        </div>
+        <img class="shot" src="cardtonic-techc.jpeg" alt="TechCabal article on Cardtonic business spend platform">
+        <div class="card-body">
+          <h3><a href="https://techcabal.com/2026/01/14/pil-by-cardtonic/" target="_blank">Business Spend Platform</a></h3>
+          <div class="tags"><span class="tag">Ghostwritten</span></div>
+          <div class="outcome">Cardtonic business spend platform launch, covered on TechCabal.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / CTA ================= -->
+  <div class="contact">
+    <h2>Need content that turns product value into sales?</h2>
+    <p>I write fintech and SEO content that gets found, gets read, and gets people to act. Let's talk about your next piece.</p>
+    <div class="contact-links">
+      <a class="primary" href="mailto:YOUR-EMAIL-HERE">Email me</a>
+      <a href="https://wa.me/YOUR-NUMBER-HERE" target="_blank">Chat on WhatsApp</a>
+      <a href="https://linkedin.com/in/YOUR-LINKEDIN-HERE" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+
+  <footer>&copy; Gloria Tejuosho</footer>
+
+</div>
+</body>
+</html>
