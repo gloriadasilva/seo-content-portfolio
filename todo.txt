@@ -1,3 +1,5 @@
 - Make the entire box clickable not just title
 - Create a tab right after disclaimer showing diffferent buttons: Blog posts, press relase etc such that once they are clicked it will navigate to that section
 - Add 2 more press releases
+
+// https://www.ghanaweb.com/GhanaHomePage/business/Upskill-by-Cardtonic-set-to-support-young-tech-enthusiasts-2045674

@@ -30,7 +30,6 @@
   }
   .wrap{max-width:980px;margin:0 auto;padding:72px 28px 100px;}
 
-  /* ---------- Hero ---------- */
   .name{
     font-family:"Fraunces", Georgia, serif;
     font-size:clamp(2.4rem, 5vw, 3.4rem);
@@ -47,7 +46,6 @@
   .intro p{font-size:1.06rem;margin:0 0 16px;}
   .intro strong{font-weight:600;}
 
-  /* stat ticker */
   .ticker{
     display:flex;
     flex-wrap:wrap;
@@ -80,13 +78,34 @@
   .disclaimer{
     font-size:0.85rem;
     color:var(--muted);
-    margin:44px 0 60px;
+    margin:44px 0 28px;
     padding-left:14px;
     border-left:2px solid var(--line);
   }
 
-  /* ---------- Sections ---------- */
-  section.category{margin-bottom:68px;}
+  .section-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:0 0 60px;
+  }
+  .section-nav a{
+    font-size:0.85rem;
+    font-weight:500;
+    color:var(--ink);
+    text-decoration:none;
+    padding:9px 16px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:var(--card);
+    transition:border-color .18s ease, background .18s ease;
+  }
+  .section-nav a:hover{
+    border-color:var(--jade);
+    background:var(--jade-dim);
+  }
+
+  section.category{margin-bottom:68px;scroll-margin-top:24px;}
   section.category .sec-head{
     display:flex;
     align-items:baseline;
@@ -117,20 +136,22 @@
     .wrap{padding:48px 20px 80px;}
   }
 
-  /* ---------- Cards ---------- */
-  .card{
+  a.card{
     background:var(--card);
     border:1px solid var(--line);
     border-radius:3px;
     overflow:hidden;
     display:flex;
     flex-direction:column;
+    text-decoration:none;
+    color:inherit;
     transition:transform .18s ease, border-color .18s ease;
   }
-  .card:hover{
+  a.card:hover{
     transform:translateY(-3px);
     border-color:#c9c4b0;
   }
+  a.card:hover h3{color:var(--jade);}
 
   .chrome{
     background:#F0EEE3;
@@ -179,9 +200,8 @@
     font-weight:500;
     font-size:1.12rem;
     margin:0 0 10px;
+    transition:color .18s ease;
   }
-  .card-body h3 a{color:var(--ink);text-decoration:none;}
-  .card-body h3 a:hover{color:var(--jade);}
 
   .tags{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;}
   .tag{
@@ -201,9 +221,9 @@
     padding:0 2px;
   }
 
-  .card.dashed{border-style:dashed;background:transparent;}
-  .card.dashed .shot.placeholder{background:transparent;}
-  .card.dashed .card-body{color:var(--muted);}
+  a.card.dashed{border-style:dashed;background:transparent;}
+  a.card.dashed .shot.placeholder{background:transparent;}
+  a.card.dashed .card-body{color:var(--muted);}
 
   footer{
     margin-top:48px;
@@ -211,7 +231,6 @@
     color:var(--muted);
   }
 
-  /* ---------- Contact / CTA ---------- */
   .contact{
     margin-top:80px;
     padding-top:52px;
@@ -264,13 +283,13 @@
 <div class="wrap">
 
   <div class="name">Gloria Tejuosho</div>
-  <div class="role"><strong> Content Writer || Fintech Content Writer</strong></div>
+  <div class="role"><strong>Content Writer || Fintech Content Writer</strong></div>
 
   <div class="intro">
     <p>Anyone can write. Heck, AI can spit out 100k words in less than 10 minutes.</p>
     <p>However, only a few people know how to write words that make people care and take action. I am one of them.</p>
     <p>I spent the last <strong>26 months and 18 days</strong> (yes, I update this regularly) creating SEO-savvy content that shows people why a product is worth their attention, their trust, and ultimately, their money.</p>
-    <P>Along the way, my work has helped brands increase online visibility and create content that supports their business goals without relying entirely on paid advertising.</P>
+    <p>Along the way, my work has helped brands increase online visibility and create content that supports their business goals without relying entirely on paid advertising.</p>
   </div>
 
   <div class="ticker">
@@ -284,209 +303,210 @@
     Disclaimer: These samples were written based on the brand's editorial guidelines.
   </div>
 
-  <!-- ================= BLOG POSTS ================= -->
-  <section class="category">
+  <nav class="section-nav">
+    <a href="#blog-posts">Blog Posts</a>
+    <a href="#guest-post-listicles">Guest Post Listicles</a>
+    <a href="#technical-articles">Technical Articles</a>
+    <a href="#press-releases">Press Releases</a>
+  </nav>
+
+  <section class="category" id="blog-posts">
     <div class="sec-head"><h2>Blog Posts</h2><span class="sec-count">04</span></div>
     <div class="grid">
 
-      <div class="card dashed"><a href="https://medium.com/@gloriadasilva_28376/how-to-scale-video-testimonial-production-with-vocal-video-69910ab212cf?sharedUserId=gloriadasilva_28376">
-            <div class="chrome">
-          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">https://medium.com/@gloriadasilva_28376/how-to-scale-video-testimonial-production-with-vocal-video-69910ab212cf?postPublishedType=initial</div>
-        </div>
-        <img class="shot" src="vocal-video-production.png" alt="Google search results for eSIM vs virtual number">
-        <div class="card-body"><a href="https://medium.com/@gloriadasilva_28376/how-to-scale-video-testimonial-production-with-vocal-video-69910ab212cf?sharedUserId=gloriadasilva_28376">
-          <h3><a href="https://medium.com/@gloriadasilva_28376/how-to-scale-video-testimonial-production-with-vocal-video-69910ab212cf?sharedUserId=gloriadasilva_28376"> SaaS Product-Led Content Sample</a></h3>
-          <div class="tags"><span class="tag">Written to showcase B2B writing skills</span></div>
-          <div class="outcome">A product-led SEO guide showing how Vocal Video helps businesses streamline and scale customer video testimonial production. </div>
-        </a>
-        </div>
-        </a>
-      </div>
-
-      <div class="card">
+      <a class="card dashed" href="https://medium.com/@gloriadasilva_28376/how-to-scale-video-testimonial-production-with-vocal-video-69910ab212cf?sharedUserId=gloriadasilva_28376" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">https://cardtonic.com/read/esim-vs-virtual-number-which-one-do-you-need</div>
+          <div class="url">medium.com/@gloriadasilva_28376/vocal-video</div>
+        </div>
+        <img class="shot" src="vocal-video-production.png" alt="Vocal Video product-led content sample">
+        <div class="card-body">
+          <h3>SaaS Product-Led Content Sample</h3>
+          <div class="tags"><span class="tag">Written to showcase B2B writing skills</span></div>
+          <div class="outcome">A product-led SEO guide showing how Vocal Video helps businesses streamline and scale customer video testimonial production.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://cardtonic.com/read/esim-vs-virtual-number-which-one-do-you-need" target="_blank" rel="noopener">
+        <div class="chrome">
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="url">cardtonic.com/read/esim-vs-virtual-number</div>
         </div>
         <img class="shot" src="proof-1.png" alt="Google search results for eSIM vs virtual number">
-        <div class="card-body"><a href="https://cardtonic.com/read/esim-vs-virtual-number-which-one-do-you-need">
-          <h3><a href="https://cardtonic.com/read/esim-vs-virtual-number-which-one-do-you-need" target="_blank">eSIM Vs. Virtual Number</a></h3>
+        <div class="card-body">
+          <h3>eSIM Vs. Virtual Number</h3>
           <div class="tags"><span class="tag">Published</span><span class="tag">Authored</span></div>
           <div class="outcome">Ranks <span class="rank">#1</span> for its primary keyword, "eSIM vs. virtual number," in Nigeria search results.</div>
-        </a>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="https://cardtonic.com/read/200-dollar-sephora-card-in-naira" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">google.com/search?q=$200+sephora+gift+card+in+naira</div>
+          <div class="url">cardtonic.com/read/200-dollar-sephora-card-in-naira</div>
         </div>
         <img class="shot" src="sephora.png" alt="Google search results for $200 sephora gift card in naira">
         <div class="card-body">
-          <h3><a href="https://cardtonic.com/read/200-dollar-sephora-card-in-naira" target="_blank">Sephora Gift Cards</a></h3>
+          <h3>Sephora Gift Cards</h3>
           <div class="tags"><span class="tag">Published</span><span class="tag">Authored</span></div>
           <div class="outcome">Ranks <span class="rank">#1</span> for its primary keyword, "$200 sephora gift card in naira."</div>
         </div>
-      </div>
-      <div class="card">
+      </a>
+
+      <a class="card" href="https://cardtonic.com/read/how-to-buy-apps-on-apple-app-store-and-google-play-store-in-nigeria" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">google.com/search?q=how+to+buy+apps+on+app+store&oq=how+to+buy+apps</div>
+          <div class="url">cardtonic.com/read/how-to-buy-apps-on-app-store</div>
         </div>
         <img class="shot" src="buyapps.png" alt="Google search results for how to buy apps on the App Store and Play Store">
         <div class="card-body">
-          <h3><a href="https://cardtonic.com/read/how-to-buy-apps-on-apple-app-store-and-google-play-store-in-nigeria" target="_blank">How to Buy Apps on Apple App Store and Google Play Store</a></h3>
+          <h3>How to Buy Apps on Apple App Store and Google Play Store</h3>
           <div class="tags"><span class="tag">Published</span><span class="tag">Authored</span></div>
           <div class="outcome">Ranks <span class="rank">#1</span> for its primary keyword, "how to buy apps on app store."</div>
         </div>
-      </div>
+      </a>
 
     </div>
   </section>
 
-  <!-- ================= GUEST POST LISTICLES ================= -->
-  <section class="category">
+  <section class="category" id="guest-post-listicles">
     <div class="sec-head"><h2>[Guest Post] Listicles</h2><span class="sec-count">04</span></div>
     <div class="grid">
-      <div class="card">
+
+      <a class="card" href="https://www.edgerankagency.com/siege-media-alternatives-for-fintech-companies/" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
           <div class="url">google.com/search?q=siege+media+alternative</div>
         </div>
         <img class="shot" src="seige-media.png" alt="Google search results for siege media alternative">
         <div class="card-body">
-          <h3><a href="#" target="_blank">Siege Media Alternatives</a></h3>
+          <h3>Siege Media Alternatives</h3>
           <div class="tags"><span class="tag">Published</span><span class="tag">Authored</span></div>
           <div class="outcome">Ranks <span class="rank">#1</span> for its primary keyword, "siege media alternative."</div>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="https://www.myjoyonline.com/top-10-online-bill-payment-platforms-in-nigeria/" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">google.com/search?q=top+bill+payment+platforms</div>
+          <div class="url">myjoyonline.com/top-10-bill-payment-platforms</div>
         </div>
         <img class="shot" src="bill.png" alt="Google search results for top bill payment platforms">
         <div class="card-body">
-          <h3><a href="https://www.myjoyonline.com/top-10-online-bill-payment-platforms-in-nigeria/" target="_blank">Top 10 Bill Payment Platforms</a></h3>
+          <h3>Top 10 Bill Payment Platforms</h3>
           <div class="tags"><span class="tag">Guest Post</span><span class="tag">Ghostwritten</span></div>
           <div class="outcome">Ranks on Google page 2 for its primary keyword, "top bill payment platforms."</div>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="https://techbuild.africa/9-best-places-to-buy-laptops-in-nigeria/" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">google.com/search?q=where+to+buy+laptop+in+nigeria</div>
+          <div class="url">techbuild.africa/best-places-to-buy-laptops</div>
         </div>
         <img class="shot" src="buy-laptop.png" alt="Google search results for where to buy laptop in Nigeria">
         <div class="card-body">
-          <h3><a href="https://techbuild.africa/9-best-places-to-buy-laptops-in-nigeria/" target="_blank">Top Platforms to Buy Laptops</a></h3>
+          <h3>Top Platforms to Buy Laptops</h3>
           <div class="tags"><span class="tag">Guest Post</span><span class="tag">Ghostwritten</span></div>
           <div class="outcome">Ranks <span class="rank">#3</span> for "where to buy laptop in Nigeria."</div>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="https://www.techcityng.com/6-best-sites-to-buy-gift-cards-online-instantly-in-nigeria-2026/" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">google.com/search?q=best+sites+to+buy+gift+cards+online</div>
+          <div class="url">techcityng.com/best-sites-to-buy-gift-cards-online</div>
         </div>
-        <img class="shot" src="giftcards.png" alt="Google search results for siege media alternative">
+        <img class="shot" src="giftcards.png" alt="Google search results for best sites to buy gift cards online">
         <div class="card-body">
-          <h3><a href="https://www.techcityng.com/6-best-sites-to-buy-gift-cards-online-instantly-in-nigeria-2026/" target="_blank">6 Best Sites to Buy Gift Cards Online Instantly in Nigeria (2026)</a></h3>
+          <h3>6 Best Sites to Buy Gift Cards Online Instantly in Nigeria (2026)</h3>
           <div class="tags"><span class="tag">Guest Post</span><span class="tag">Ghostwritten</span></div>
           <div class="outcome">Ranks <span class="rank">on Google Page 1</span> for its primary keyword, "best sites to buy gift cards online."</div>
         </div>
-      </div>
+      </a>
 
     </div>
   </section>
 
-  <!-- ================= TECHNICAL ARTICLES ================= -->
-  <section class="category">
+  <section class="category" id="technical-articles">
     <div class="sec-head"><h2>Technical Articles</h2><span class="sec-count">03</span></div>
     <div class="grid">
 
-      <div class="card">
+      <a class="card" href="https://docs.spotflow.one/developer-resources/redirectapi-in-your-app" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">spotflow docs / redirect-api-guide</div>
+          <div class="url">docs.spotflow.one/redirect-api-guide</div>
         </div>
         <img class="shot" src="image.png" alt="Spotflow Redirect API integration guide article">
         <div class="card-body">
-          <h3><a href="https://docs.spotflow.one/developer-resources/redirectapi-in-your-app" target="_blank">Step-by-Step Integration Guide</a></h3>
+          <h3>Step-by-Step Integration Guide</h3>
           <div class="tags"><span class="tag">Authored</span></div>
           <div class="outcome">Walks developers through the Spotflow Redirect API from payment initialisation to verification.</div>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="https://www.freecodecamp.org/news/how-to-build-api-documentation-from-scratch-roadmap/" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">freecodecamp.org/news/...</div>
+          <div class="url">freecodecamp.org/news/api-documentation-roadmap</div>
         </div>
         <img class="shot" src="freecodecamp.png" alt="FreeCodeCamp article on building API documentation">
         <div class="card-body">
-          <h3><a href="https://www.freecodecamp.org/news/how-to-build-api-documentation-from-scratch-roadmap/" target="_blank">API Documentation Guide on FreeCodeCamp</a></h3>
+          <h3>API Documentation Guide on FreeCodeCamp</h3>
           <div class="tags"><span class="tag">Authored</span></div>
           <div class="outcome">A roadmap for building API documentation from scratch, covering planning, structure, tooling, and publishing.</div>
         </div>
-      </div>
-      <div class="card">
+      </a>
+
+      <a class="card" href="https://dev.to/gloriasilver/building-an-authentication-system-with-express-jwt-a-step-by-step-guide-7g2" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">dev.to/gloriasilver/building-an-authentication-system-with-express-jwt-a-step-by-step-guide-7g2</div>
+          <div class="url">dev.to/gloriasilver/express-jwt-auth-guide</div>
         </div>
         <img class="shot" src="building.png" alt="A guide on how to build an authentication system">
         <div class="card-body">
-          <h3><a href="https://dev.to/gloriasilver/building-an-authentication-system-with-express-jwt-a-step-by-step-guide-7g2" target="_blank">Building an Authentication System With Express JWT: A Step-by-Step Guide</a></h3>
+          <h3>Building an Authentication System With Express JWT: A Step-by-Step Guide</h3>
           <div class="tags"><span class="tag">Authored</span></div>
-          <div class="outcome">A guide for building building an authentication system using Express, MongoDB, and JWT, </div>
+          <div class="outcome">A guide for building an authentication system using Express, MongoDB, and JWT.</div>
         </div>
-      </div>
-
+      </a>
 
     </div>
   </section>
 
-  <!-- ================= PRESS RELEASES ================= -->
-  <section class="category">
+  <section class="category" id="press-releases">
     <div class="sec-head"><h2>Press Releases</h2><span class="sec-count">02</span></div>
     <div class="grid">
 
-      <div class="card">
+      <a class="card" href="https://www.premiumtimesng.com/promoted/888183-cardtonic-evolves-into-full-service-gift-card-app-for-nigerians-to-buy-local-gift-cards.html" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">nairametrics.com/...</div>
+          <div class="url">premiumtimesng.com/cardtonic-gift-card-launch</div>
         </div>
-        <img class="shot" src="giftcardp.png" alt="Nairametrics article on Cardtonic full-service gift card launch">
+        <img class="shot" src="giftcardp.png" alt="Article on Cardtonic full-service gift card launch">
         <div class="card-body">
-          <h3><a href="https://www.premiumtimesng.com/promoted/888183-cardtonic-evolves-into-full-service-gift-card-app-for-nigerians-to-buy-local-gift-cards.html" target="_blank">Full-Service Gift Card Launch</a></h3>
+          <h3>Full-Service Gift Card Launch</h3>
           <div class="tags"><span class="tag">Ghostwritten</span></div>
           <div class="outcome">Cardtonic's full-service gift card launch, covered on Nairametrics.</div>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="https://techcabal.com/2026/01/14/pil-by-cardtonic/" target="_blank" rel="noopener">
         <div class="chrome">
           <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-          <div class="url">techcabal.com/...</div>
+          <div class="url">techcabal.com/pil-by-cardtonic</div>
         </div>
         <img class="shot" src="cardtonic-techc.jpeg" alt="TechCabal article on Cardtonic business spend platform">
         <div class="card-body">
-          <h3><a href="https://techcabal.com/2026/01/14/pil-by-cardtonic/" target="_blank">Business Spend Platform</a></h3>
+          <h3>Business Spend Platform</h3>
           <div class="tags"><span class="tag">Ghostwritten</span></div>
           <div class="outcome">Cardtonic business spend platform launch, covered on TechCabal.</div>
         </div>
-      </div>
+      </a>
 
     </div>
   </section>
 
-  <!-- ================= CONTACT / CTA ================= -->
   <div class="contact">
     <h2>Need content that turns product value into sales?</h2>
     <p>I write fintech and SEO content that gets found, gets read, and gets people to act. Let's talk about your next piece.</p>
