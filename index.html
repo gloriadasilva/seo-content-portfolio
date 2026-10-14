@@ -288,12 +288,12 @@
   <div class="intro">
     <p>Anyone can write. Heck, AI can spit out 100k words in less than 10 minutes.</p>
     <p>However, only a few people know how to write words that make people care and take action. I am one of them.</p>
-    <p>I spent the last <strong>27 months and 5 days</strong> (yes, I update this regularly) creating SEO-savvy content that shows people why a product is worth their attention, their trust, and ultimately, their money.</p>
+    <p>I spent the last <strong id="exp-long">27 months and 5 days</strong> (this updates automatically, so it's always accurate :)) creating SEO-savvy content that shows people why a product is worth their attention, their trust, and ultimately, their money.</p>
     <p>Along the way, my work has helped brands increase online visibility and create content that supports their business goals without relying entirely on paid advertising.</p>
   </div>
 
   <div class="ticker">
-    <div class="stat"><span class="num">27mo 5d</span><span class="label">writing SEO content</span></div>
+    <div class="stat"><span class="num" id="exp-short">27mo 5d</span><span class="label">writing SEO content</span></div>
     <div class="stat"><span class="num">8+</span><span class="label">brands worked with</span></div>
     <div class="stat"><span class="num">100+</span><span class="label">pieces of content written</span></div>
     <div class="stat"><span class="num">25+</span><span class="label">#1 keyword rankings</span></div>
@@ -520,5 +520,29 @@
   <footer>&copy; Gloria Tejuosho</footer>
 
 </div>
+
+<script>
+(function () {
+  // Your start date: year, month (1-12), day
+  var START = { y: 2024, m: 7, d: 9 };
+
+  var now = new Date();
+  var months = (now.getFullYear() - START.y) * 12 + (now.getMonth() + 1 - START.m);
+  var days = now.getDate() - START.d;
+
+  if (days < 0) {
+    months -= 1;
+    // borrow days from the previous month
+    days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+  }
+
+  var plural = function (n, word) { return n + " " + word + (n === 1 ? "" : "s"); };
+
+  var long = document.getElementById("exp-long");
+  var short = document.getElementById("exp-short");
+  if (long) long.textContent = plural(months, "month") + " and " + plural(days, "day");
+  if (short) short.textContent = months + "mo " + days + "d";
+})();
+</script>
 </body>
 </html>
